@@ -8,23 +8,50 @@ using UnityEngine.Networking;
 public class Cat : MonoBehaviour {
 
     public event PositionDelegate DestinationReached;
-    public SpriteRenderer spriteRenderer;
 
+    public CatSpriteStuff spriteScript;
+    [Space]
 
-    public float MaxPatience = 100;
-    public float patienceModifier = 5;
+    public float maxPatience = 100;
+    public float patienceDelta = 5f;
+    public float damage = 5f;
+    private float patience = -1f;
+    public float damageCooldown = 5f;
+    private float halfCooldown;
+    private float currentCooldown = 0f;
     [Space]
     public FoodType[] foods;
     [Space]
     [SerializeField] AnimationCurve moveEasing;
 
+    CatState catState = CatState.noneStand;
+
     // Start is called before the first frame update
     void Start() {
-
+        DestinationReached += DestinationReachedHandler;
+        UpdateCatState(CatState.noneStand);
+        UpdateCatRotation();
+        patience = maxPatience;
+        halfCooldown = damageCooldown * 0.5f;
     }
+
 
     // Update is called once per frame
     void Update() {
+        //Ifs ultra desprolijos, w/e
+        if (catState == CatState.neutral || catState == CatState.angry) {
+            if (catState == CatState.neutral) {
+                patience = patience - Time.deltaTime * patienceDelta;
+                if (patience < 0f) {
+                    UpdateCatState(CatState.angry);
+                }
+            }
+            currentCooldown = currentCooldown + Time.deltaTime;
+            if ((catState == CatState.neutral && currentCooldown > damageCooldown) || (catState == CatState.angry && currentCooldown > halfCooldown)) {
+                currentCooldown = 0f;
+                DoMeow();
+            }
+        }
     }
 
     /// <summary>
@@ -43,25 +70,20 @@ public class Cat : MonoBehaviour {
 
     private IEnumerator MovementCR(Vector3 destination) {
         yield return new WaitForSeconds(0.1f); //Si no hay espera hace cosas raras el sprite
-        Debug.Log("test move");
         // Work in progress
         Vector3 moveStart = transform.position;
         float startTime = Time.time;
         float currentDistance = Vector3.Distance(moveStart, destination);
         float thisMoveTime = currentDistance / speedUnitsPerSecond;
         while (currentDistance > minDistance) {
-            Debug.Log("inside: " + Time.time + " " + startTime);
             float normalizedProgress = (Time.time - startTime) / thisMoveTime;
-            Debug.Log(normalizedProgress);
             if (normalizedProgress > 1) {
                 break;
             }
             float easing = moveEasing.Evaluate(normalizedProgress);
-            Debug.Log(easing);
             Vector3 oldPos = transform.position;
             Vector3 newPos = Vector3.Lerp(moveStart, destination, easing);
             transform.position = newPos;
-            Debug.Log("PreviousPos " + oldPos + " newPos " + transform.position);
             yield return null;
             currentDistance = Vector3.Distance(transform.position, destination);
         }
@@ -73,6 +95,11 @@ public class Cat : MonoBehaviour {
         if (DestinationReached != null) {
             DestinationReached(transform.position);
         }
+    }
+
+    private void DoMeow() {
+        Debug.Log("Meow");
+        spriteScript.DoMeow();
     }
 
     /// <summary>
@@ -92,5 +119,28 @@ public class Cat : MonoBehaviour {
         return true;
     }
 
+    private void DestinationReachedHandler(Vector3 position) {
+        UpdateCatState(CatState.neutral);
+        UpdateCatRotation();
+    }
 
+    public void UpdateCatState(CatState newState) {
+        catState = newState;
+        spriteScript.SetState(catState);
+    }
+
+    public void UpdateCatRotation() {
+        if (transform.position.x < 0) {
+            spriteScript.spriteRenderer.flipX = true;
+        } else {
+            spriteScript.spriteRenderer.flipX = false;
+        }
+    }
+}
+
+public enum CatState {
+    noneStand,
+    neutral,
+    angry,
+    happy
 }

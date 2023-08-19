@@ -11,10 +11,10 @@ public class CatManager : MonoBehaviour {
         }
     }
 
-    public GameObject catPrefab;
 
     List<CatSpawn> catSpawns;
     List<CatDestination> catDestinations;
+    List<CatDestination> emptyDestinations;
     List<Cat> currentCats;
 
     private void Awake() {
@@ -27,7 +27,7 @@ public class CatManager : MonoBehaviour {
         catSpawns = new List<CatSpawn>();
         catDestinations = new List<CatDestination>();   
         currentCats = new List<Cat>();
-
+        UpdateDestinations();
     }
 
 
@@ -45,18 +45,42 @@ public class CatManager : MonoBehaviour {
 
     }
 
+    void UpdateDestinations() {
+        emptyDestinations = new List<CatDestination>();
+        foreach (CatDestination cd in catDestinations) { 
+            if (cd.currentCat == null) {
+                emptyDestinations.Add(cd);
+            }
+        }
+    }
+
     [ContextMenu("Spawn Cat")]
     public void SpawnCat() {
+        if (emptyDestinations.Count < 1) {
+            UpdateDestinations();
+            if (emptyDestinations.Count < 1) {
+                Debug.Log("Se intentó crear un gato, no hay más espacio para gatos");
+                return;
+            }
+        }
+        GameObject catPrefab = CatPrefabManager.Instance.GetRandomCat();
+        if (catPrefab == null) {
+            Debug.LogError("Error creando gato, prefab no encontrado");
+            return;
+        }
         int randStart = Random.Range(0, catSpawns.Count);
-        int randEnd = Random.Range(0, catDestinations.Count);
+        int randEnd = Random.Range(0, emptyDestinations.Count);
         GameObject newCatObj = GameObject.Instantiate(catPrefab, catSpawns[randStart].transform.position, catPrefab.transform.rotation);
         Cat newCat = newCatObj.GetComponent<Cat>();
         currentCats.Add(newCat);
-        newCat.MoveCat(catDestinations[randEnd].transform.position);
+        newCat.MoveCat(emptyDestinations[randEnd].transform.position);
+        emptyDestinations[randEnd].currentCat = newCat;
+        UpdateDestinations();
     }
 
-    public void RemoveCatFromList(Cat toRemove) {
-        currentCats.Remove(toRemove);
+    public static void RemoveCatFromList(Cat toRemove) {
+        Instance.currentCats.Remove(toRemove); 
+        Instance.UpdateDestinations();
     }
 
     public static void AddSpawn(CatSpawn toAdd) {
@@ -65,6 +89,7 @@ public class CatManager : MonoBehaviour {
 
     public static void AddDestination(CatDestination toAdd) {
         Instance.catDestinations.Add(toAdd);
+        Instance.UpdateDestinations();
     }
 
 
