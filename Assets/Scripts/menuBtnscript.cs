@@ -6,18 +6,14 @@ using UnityEngine.UI;
 
 public class menuBtnscript : MonoBehaviour
 {
+    public Animator transition;
+    public float transitionTime = 1f;
 
-    // Start is called before the first frame update
-    void Start()
+    public void LoadNextLevel()
     {
-        
+        StartCoroutine(LoadLevel(SceneManager.GetActiveScene().buildIndex + 1));
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
     public void SceneLoad(string sceneName)
     {
         SceneManager.LoadScene(sceneName);
@@ -25,7 +21,7 @@ public class menuBtnscript : MonoBehaviour
     public void OpenSubPanel(GameObject Panel)
     {
         Panel.SetActive(true);
-        gameObject.SetActive(false);
+      //gameObject.SetActive(false); //for the purpose of the cat game, self deactivation is disabled, maybe deprecate this altogether.
             
     }
     public void forceBtnSelect(Button Boton)
@@ -42,7 +38,14 @@ public class menuBtnscript : MonoBehaviour
     {
         Application.Quit();
     }
+    IEnumerator LoadLevel(int levelIndex)
+    {
+        transition.SetTrigger("Start");
 
+        yield return new WaitForSeconds(transitionTime);
+
+        SceneManager.LoadScene(levelIndex);
+    }
 
 
 }
