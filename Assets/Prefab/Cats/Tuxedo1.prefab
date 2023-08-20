@@ -73,7 +73,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 93855579cc2f46442b30f73a351a5bce, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 375c1cfcb8aad434ebdff2e782162565, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -99,7 +99,7 @@ GameObject:
   - component: {fileID: 2701160775928435894}
   - component: {fileID: 1696409751150710701}
   m_Layer: 6
-  m_Name: Negro1
+  m_Name: Tuxedo1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -145,7 +145,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: eb831d481c2ff1645bb9ae9857d6d545, type: 3}
   - {fileID: 8300000, guid: b99ff2de2b445954eb5a44672dc638c6, type: 3}
   - {fileID: 8300000, guid: de13faf8c7e41364aaa205882ddcae87, type: 3}
-  foods: 01000000
+  foods: 0100000000000000
   moveEasing:
     serializedVersion: 2
     m_Curve:
@@ -195,20 +195,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spriteRenderer: {fileID: 8168131839012929639}
   parado:
-  - {fileID: 21300000, guid: 93855579cc2f46442b30f73a351a5bce, type: 3}
-  - {fileID: 21300000, guid: 522c7b780a81d7b4886b903919aa38ad, type: 3}
+  - {fileID: 21300000, guid: 375c1cfcb8aad434ebdff2e782162565, type: 3}
+  - {fileID: 21300000, guid: 437c1ddeee944cc42b0c75131a8e2716, type: 3}
   neutro:
-  - {fileID: 21300000, guid: 59afe2d0e8b897e4f9fac41eeb545988, type: 3}
-  - {fileID: 21300000, guid: 522c7b780a81d7b4886b903919aa38ad, type: 3}
+  - {fileID: 21300000, guid: 365b206fae0a47845b0ad78f930399d2, type: 3}
+  - {fileID: 21300000, guid: 437c1ddeee944cc42b0c75131a8e2716, type: 3}
   feliz:
-  - {fileID: 21300000, guid: 3b03d24afad70f34393eb67917d67e38, type: 3}
-  - {fileID: 21300000, guid: 522c7b780a81d7b4886b903919aa38ad, type: 3}
+  - {fileID: 21300000, guid: 0f72f9d16ee3cd64fb4b894412246ec4, type: 3}
+  - {fileID: 21300000, guid: 437c1ddeee944cc42b0c75131a8e2716, type: 3}
   sad:
-  - {fileID: 21300000, guid: fe2a80cdfc8176142907c037d87da8b8, type: 3}
-  - {fileID: 21300000, guid: 0fac02a2224391f4699ce04a17541158, type: 3}
+  - {fileID: 21300000, guid: e88438d6eda3bcf41a5b8ef459607616, type: 3}
+  - {fileID: 21300000, guid: fe3af4c88bc1c5648b0c49f39495e762, type: 3}
   angery:
-  - {fileID: 21300000, guid: 3dcf580833b4d2847a69e12d6059bdeb, type: 3}
-  - {fileID: 21300000, guid: 50862468a44c32542acad991b09fb40d, type: 3}
+  - {fileID: 21300000, guid: 3d835151c91c0bb4bb2da5d2cab4671a, type: 3}
+  - {fileID: 21300000, guid: e5cd0dcc25f29c24fbf6a7494eefa9a3, type: 3}
   meowTime: 0.3
 --- !u!82 &8177132799890715085
 AudioSource:

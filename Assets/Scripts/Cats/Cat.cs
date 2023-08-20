@@ -38,6 +38,8 @@ public class Cat : MonoBehaviour {
         UpdateCatRotation();
         patience = maxPatience;
         angryCooldown = damageCooldown * 0.75f;
+        float pitchRandom = Random.Range(-0.15f,0.15f);
+        audioSource.pitch = audioSource.pitch + pitchRandom;
     }
 
 
