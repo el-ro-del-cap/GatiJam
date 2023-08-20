@@ -5,11 +5,19 @@ using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 public class DragDrop : MonoBehaviour
-{   
+{
+    [Header("Cursor Settings")]
+    public Texture2D Hover;
+    public Texture2D Grab;
+    public Vector2 NormalCursorHotSpot;
+    public Vector2 GrabCursorHotSpot;
+
+    [Header("Audio")]
     public AudioClip SelectNoise;
     //public AudioSource audioJungle;
-    public Image image;
+    [Header ("Sprites")]
 
+    public Image image;
     public Sprite sprtEmpty;
     public Sprite sprtWhite;
     public Sprite sprtBlack;
@@ -22,6 +30,7 @@ public class DragDrop : MonoBehaviour
     public List<FoodType> foods;
 
     private void Start() {
+        Cursor.SetCursor(Hover, NormalCursorHotSpot, CursorMode.Auto);
         //audioJungle = GameObject.Find("Main Camera").GetComponent<AudioSource>();
     }
 
@@ -47,8 +56,10 @@ public class DragDrop : MonoBehaviour
         }*/
     }
 
-    public void OnMouseUp(BaseEventData data) {
-        CheckMouth();
+    public void OnMouseUp(BaseEventData data)
+    {
+        Cursor.SetCursor(Hover, NormalCursorHotSpot, CursorMode.Auto);
+        CheckMouth(); 
         GameObject.Destroy(gameObject);
         /*if (onMouth)
         {
@@ -74,6 +85,7 @@ public class DragDrop : MonoBehaviour
     }
 
     public void DragThisThing(BaseEventData data) {
+        Cursor.SetCursor(Grab, GrabCursorHotSpot, CursorMode.Auto);
         Vector2 position;
         Canvas canvas = CanvasSingleton.Instance.canvas;
         RectTransformUtility.ScreenPointToLocalPointInRectangle(

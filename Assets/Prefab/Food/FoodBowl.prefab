@@ -52,6 +52,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b8f8e872afbb2e44ba5a965645569aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Hover: {fileID: 2800000, guid: 2e8fde508bb77ab40bfc078777e83ef6, type: 3}
+  Grab: {fileID: 2800000, guid: 93cf2a3b1ed130448bba5ea5842a105a, type: 3}
+  NormalCursorHotSpot: {x: -20, y: -20}
+  GrabCursorHotSpot: {x: -20, y: -20}
   SelectNoise: {fileID: 8300000, guid: bc9bc56ed3b9d3347a9c69df6b7192f2, type: 3}
   image: {fileID: 8023418909236411508}
   sprtEmpty: {fileID: 21300000, guid: 6cc794b0ef0f9fe4cbf65ecebe31176d, type: 3}
