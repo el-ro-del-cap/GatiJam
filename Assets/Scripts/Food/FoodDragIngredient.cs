@@ -5,6 +5,11 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 
 public class FoodDragIngredient : MonoBehaviour {
+    [Header("Cursor Settings")]
+    public Texture2D Hover;
+    public Texture2D Grab;
+    public Vector2 NormalCursorHotSpot;
+    public Vector2 GrabCursorHotSpot;
 
     [SerializeField]
     public FoodType foodType;
@@ -21,7 +26,9 @@ public class FoodDragIngredient : MonoBehaviour {
         
     }
 
-    public void DragThisThing(BaseEventData data) {
+    public void DragThisThing(BaseEventData data)
+    {
+        Cursor.SetCursor(Grab, GrabCursorHotSpot, CursorMode.Auto);
         Vector2 position;
         Canvas canvas = CanvasSingleton.Instance.canvas;
         RectTransformUtility.ScreenPointToLocalPointInRectangle(
@@ -33,7 +40,9 @@ public class FoodDragIngredient : MonoBehaviour {
         transform.position = canvas.transform.TransformPoint(position);
     }
 
-    public void OnMouseUp(BaseEventData data) {
+    public void OnMouseUp(BaseEventData data)
+    {
+        Cursor.SetCursor(Hover, NormalCursorHotSpot, CursorMode.Auto);
         AddFood();
         GameObject.Destroy(gameObject);
     }

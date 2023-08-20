@@ -14,6 +14,11 @@ public class menuBtnscript : MonoBehaviour
         StartCoroutine(LoadLevel(SceneManager.GetActiveScene().buildIndex + 1));
     }
 
+    public void SceneLoadIndex(int index)
+    {
+        SceneManager.LoadScene(index);
+    }
+
     public void SceneLoad()
     {
         StartCoroutine("LoadLevel", 1);
