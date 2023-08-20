@@ -9,7 +9,6 @@ public class DragDrop : MonoBehaviour
     //public AudioSource audioJungle;
     public Consume Consumer;
     private Collider2D coll;
-    public Canvas canvas;
 
     public List<FoodType> foods;
 
@@ -68,6 +67,7 @@ public class DragDrop : MonoBehaviour
 
     public void DragThisThing(BaseEventData data) {
         Vector2 position;
+        Canvas canvas = CanvasSingleton.Instance.canvas;
         RectTransformUtility.ScreenPointToLocalPointInRectangle(
             (RectTransform)canvas.transform,
             Input.mousePosition,

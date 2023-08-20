@@ -6,7 +6,7 @@ using UnityEngine.EventSystems;
 
 public class FoodDragIngredient : MonoBehaviour {
 
-    public Canvas canvas;
+    [SerializeField]
     public FoodType foodType;
 
     // Start is called before the first frame update
@@ -23,6 +23,7 @@ public class FoodDragIngredient : MonoBehaviour {
 
     public void DragThisThing(BaseEventData data) {
         Vector2 position;
+        Canvas canvas = CanvasSingleton.Instance.canvas;
         RectTransformUtility.ScreenPointToLocalPointInRectangle(
             (RectTransform)canvas.transform,
             Input.mousePosition,
@@ -39,11 +40,13 @@ public class FoodDragIngredient : MonoBehaviour {
 
 
     private void AddFood() {
-        int layerMask = 1 << 6; //Layer de gatos
+        Debug.Log("Adding food 1");
+        int layerMask = 1 << 7; //Layer de gatos
 
-        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-        RaycastHit2D hit = Physics2D.Raycast(ray.origin, ray.direction, 50f, layerMask);
+        Ray ray = Camera.main.ScreenPointToRay(this.transform.position);
+        RaycastHit2D hit = Physics2D.Raycast(transform.position, ray.direction, 50f, layerMask);
         if (hit.transform != null) {
+            Debug.Log("Adding food 2");
             DragDrop hitBowl = hit.transform.GetComponent<DragDrop>();
             if (hitBowl != null) {
                 hitBowl.AddFood(foodType);
