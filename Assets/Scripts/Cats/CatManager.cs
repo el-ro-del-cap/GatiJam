@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class CatManager : MonoBehaviour {
-
     private static CatManager _instance;
     public static CatManager Instance {
         get {
@@ -35,7 +34,10 @@ public class CatManager : MonoBehaviour {
 
 
     // Start is called before the first frame update
-    void Start() {
+    void Start()
+    {
+        InvokeRepeating("Intensity", 30f, 30f); //Cada 30 segundos corre el metodo
+        Application.targetFrameRate = 60; //Limito el framerate, así nos evitamos dolores de cabeza en el futuro.
         nextCat = Time.time + 2f;
     }
 
@@ -98,6 +100,13 @@ public class CatManager : MonoBehaviour {
         Instance.UpdateDestinations();
     }
 
+    private void Intensity()    //we call this a dificulty tweak
+    {
+        if (catSpawnMinTimer > 1f)
+        {
+            Debug.Log("+30!");
+            catSpawnMinTimer = catSpawnMinTimer - 0.2f;
+        }
+    }
 
-
-}
+    }
