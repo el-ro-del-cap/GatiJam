@@ -2619,6 +2619,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1066199754738095131, guid: fab8dc508a715d940a168d199ee6e0a7, type: 3}
+      propertyPath: catSpawnMinTimer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 1384777679529243215, guid: fab8dc508a715d940a168d199ee6e0a7, type: 3}
       propertyPath: m_Name
       value: CatManager

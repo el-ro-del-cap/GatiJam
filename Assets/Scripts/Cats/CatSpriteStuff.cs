@@ -55,7 +55,7 @@ public class CatSpriteStuff : MonoBehaviour {
                 }
                 break;
             case CatState.happy:
-                spriteRenderer.sprite = parado[0];
+                spriteRenderer.sprite = feliz[0];
                 break;
         }
     }
