@@ -139,12 +139,12 @@ MonoBehaviour:
   damage: 10
   damageCooldown: 5
   meows:
-  - {fileID: 8300000, guid: cc39cf2a812c8fd40bec592193df1fd9, type: 3}
-  - {fileID: 8300000, guid: 98b0d601793b84a4ebc715b2eeda7ed2, type: 3}
-  - {fileID: 8300000, guid: a6cee6e5088d430428c96728e581ad86, type: 3}
-  - {fileID: 8300000, guid: 15d0767d294f0a44cb26995b66d17e83, type: 3}
-  - {fileID: 8300000, guid: 14355a9f905b939409fcf0ecd686a05a, type: 3}
-  - {fileID: 8300000, guid: dd2fc1d6fb103bb40b455f5d8b4dafaa, type: 3}
+  - {fileID: 8300000, guid: 7974ba3b2216ebb429f471035f9e4ce2, type: 3}
+  - {fileID: 8300000, guid: e545dc29b3f482f40920e892c7969ef3, type: 3}
+  - {fileID: 8300000, guid: f8eb6ec5ced3d6e46857a9d2c4dfd75a, type: 3}
+  - {fileID: 8300000, guid: eb831d481c2ff1645bb9ae9857d6d545, type: 3}
+  - {fileID: 8300000, guid: b99ff2de2b445954eb5a44672dc638c6, type: 3}
+  - {fileID: 8300000, guid: de13faf8c7e41364aaa205882ddcae87, type: 3}
   foods: 02000000
   moveEasing:
     serializedVersion: 2
@@ -353,3 +353,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3fbb180ceac88594ab9b7721aad03517, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bounceCurve:
+    serializedVersion: 2
+    m_Curve: []
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  vanishCurve:
+    serializedVersion: 2
+    m_Curve: []
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  meowCurve:
+    serializedVersion: 2
+    m_Curve: []
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
