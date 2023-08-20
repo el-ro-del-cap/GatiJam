@@ -360,6 +360,7 @@ RectTransform:
   - {fileID: 583656724}
   - {fileID: 1080614067}
   - {fileID: 1284639739}
+  - {fileID: 2052389624}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -1719,7 +1720,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 2052389623}
         m_TargetAssemblyTypeName: menuBtnscript, Assembly-CSharp
-        m_MethodName: LoadNextLevel
+        m_MethodName: SceneLoad
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2532,7 +2533,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   transition: {fileID: 1864111225}
-  transitionTime: 1
+  transitionTime: 1.2
 --- !u!4 &2052389624
 Transform:
   m_ObjectHideFlags: 0
@@ -2541,13 +2542,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2052389622}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 534.9069, y: 351.39038, z: -6.4393206}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -31.409323, y: 97.024895, z: -11.178567}
+  m_LocalScale: {x: 1.7359855, y: 1.7359855, z: 1.7359855}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1805467514}
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 382922726}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
@@ -2556,4 +2557,3 @@ SceneRoots:
   - {fileID: 519420032}
   - {fileID: 382922726}
   - {fileID: 1876937303}
-  - {fileID: 2052389624}

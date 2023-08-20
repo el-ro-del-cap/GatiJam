@@ -14,14 +14,14 @@ public class menuBtnscript : MonoBehaviour
         StartCoroutine(LoadLevel(SceneManager.GetActiveScene().buildIndex + 1));
     }
 
-    public void SceneLoad(string sceneName)
+    public void SceneLoad()
     {
-        SceneManager.LoadScene(sceneName);
+        StartCoroutine("LoadLevel", 1);
     }
     public void OpenSubPanel(GameObject Panel)
     {
         Panel.SetActive(true);
-      //gameObject.SetActive(false); //for the purpose of the cat game, self deactivation is disabled, maybe deprecate this altogether.
+      //gameObject.SetActive(false); //for the purpose of the cat game, self deactivation is disabled, maybe get rid of this.
             
     }
     public void forceBtnSelect(Button Boton)
