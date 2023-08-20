@@ -8,8 +8,8 @@ using UnityEngine.Networking;
 public class Cat : MonoBehaviour {
 
     public event PositionDelegate DestinationReached;
-
     public CatSpriteStuff spriteScript;
+    private CatAnimations catAnims;
     [Space]
 
     public float maxPatience = 100;
@@ -32,6 +32,7 @@ public class Cat : MonoBehaviour {
     // Start is called before the first frame update
     void Start() {
         audioSource = GetComponent<AudioSource>();
+        catAnims = GetComponent<CatAnimations>();
         DestinationReached += DestinationReachedHandler;
         UpdateCatState(CatState.noneStand);
         UpdateCatRotation();
@@ -108,6 +109,7 @@ public class Cat : MonoBehaviour {
             int randMeow = Random.Range(0, meows.Length);
             audioSource.PlayOneShot(meows[randMeow]);
         }
+        catAnims.ScaleBounceCat(new Vector3(0.9f,1.1f,1f), 0.4f);
     }
 
     /// <summary>
@@ -148,6 +150,7 @@ public class Cat : MonoBehaviour {
     public void FeedCat() {
         Debug.Log("Cat fed");
         StartCoroutine(FeedCatCR());
+        catAnims.ScaleBounceCat(new Vector3(1.2f, 0.8f, 1f), 1.5f);
     }
 
     public IEnumerator FeedCatCR() {

@@ -18,13 +18,43 @@ public class CatAnimations : MonoBehaviour
         baseScale = transform.localScale;
     }
 
-    public void ScaleBounceCat(Vector3 scale, float time) {
 
-        
+
+    public void ScaleBounceCat(Vector3 newScale, float time, AnimationCurve curve = null) {
+        StartCoroutine(ScaleBounceCatCR(newScale, time, curve = null));
     }
 
-    public void ScaleBounceCatCR(Vector3 scale, float time) {
-        
+    public IEnumerator ScaleBounceCatCR(Vector3 newScale, float time, AnimationCurve curve = null) {
+        float startTime = Time.time;
+        float halfTime = time * 0.5f;
+        float maxHalfTime = startTime + halfTime;
+        while (Time.time < maxHalfTime) {
+            float normalizedProgress = (Time.time - startTime) / maxHalfTime;
+            float easing;
+            if (curve != null) {
+                easing = curve.Evaluate(normalizedProgress);
+            } else {
+                easing = normalizedProgress;
+            }
+            Vector3 lerpScale = Vector3.Lerp(baseScale, newScale, easing);
+            transform.localScale = lerpScale;
+            yield return null;
+        }
+        startTime = Time.time;
+        maxHalfTime = startTime + halfTime;
+        while (Time.time < maxHalfTime) {
+            float normalizedProgress = (Time.time - startTime) / maxHalfTime;
+            float easing;
+            if (curve != null) {
+                easing = curve.Evaluate(normalizedProgress);
+            } else {
+                easing = normalizedProgress;
+            }
+            Vector3 lerpScale = Vector3.Lerp(newScale, baseScale, easing);
+            transform.localScale = lerpScale;
+            yield return null;
+        }
+        transform.localScale = baseScale;
     }
 
 
