@@ -21,7 +21,7 @@ public class ImgCycler : MonoBehaviour
     }
     public void Cycle()
     {
-        if (pana.sprite = img1)
+        if (pana.sprite = img1) 
             pana.sprite = Img2;
         else if (pana.sprite = Img2) 
             pana.sprite = img1;
