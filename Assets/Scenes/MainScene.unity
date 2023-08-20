@@ -3433,7 +3433,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2568251307154827487, guid: fab8dc508a715d940a168d199ee6e0a7, type: 3}
       propertyPath: catArrays.Array.size
-      value: 6
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 2568251307154827487, guid: fab8dc508a715d940a168d199ee6e0a7, type: 3}
       propertyPath: catArrays.Array.data[2].name
@@ -3452,6 +3452,10 @@ PrefabInstance:
       value: Carey
       objectReference: {fileID: 0}
     - target: {fileID: 2568251307154827487, guid: fab8dc508a715d940a168d199ee6e0a7, type: 3}
+      propertyPath: catArrays.Array.data[6].name
+      value: Blanar
+      objectReference: {fileID: 0}
+    - target: {fileID: 2568251307154827487, guid: fab8dc508a715d940a168d199ee6e0a7, type: 3}
       propertyPath: catArrays.Array.data[3].rerollChance
       value: 20
       objectReference: {fileID: 0}
@@ -3461,7 +3465,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2568251307154827487, guid: fab8dc508a715d940a168d199ee6e0a7, type: 3}
       propertyPath: catArrays.Array.data[5].rerollChance
-      value: 40
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 2568251307154827487, guid: fab8dc508a715d940a168d199ee6e0a7, type: 3}
+      propertyPath: catArrays.Array.data[6].rerollChance
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 2568251307154827487, guid: fab8dc508a715d940a168d199ee6e0a7, type: 3}
       propertyPath: catArrays.Array.data[2].variations.Array.size
@@ -3478,6 +3486,10 @@ PrefabInstance:
     - target: {fileID: 2568251307154827487, guid: fab8dc508a715d940a168d199ee6e0a7, type: 3}
       propertyPath: catArrays.Array.data[5].variations.Array.size
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2568251307154827487, guid: fab8dc508a715d940a168d199ee6e0a7, type: 3}
+      propertyPath: catArrays.Array.data[6].variations.Array.size
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2568251307154827487, guid: fab8dc508a715d940a168d199ee6e0a7, type: 3}
       propertyPath: catArrays.Array.data[2].variations.Array.data[0]
@@ -3499,6 +3511,14 @@ PrefabInstance:
       propertyPath: catArrays.Array.data[5].variations.Array.data[0]
       value: 
       objectReference: {fileID: 2513387600955443120, guid: f2dbc1423ecdba244b3731414d52b546, type: 3}
+    - target: {fileID: 2568251307154827487, guid: fab8dc508a715d940a168d199ee6e0a7, type: 3}
+      propertyPath: catArrays.Array.data[6].variations.Array.data[0]
+      value: 
+      objectReference: {fileID: 2513387600955443120, guid: 38d93bc0574308f438cd186d0df13d14, type: 3}
+    - target: {fileID: 2568251307154827487, guid: fab8dc508a715d940a168d199ee6e0a7, type: 3}
+      propertyPath: catArrays.Array.data[6].variations.Array.data[1]
+      value: 
+      objectReference: {fileID: 2513387600955443120, guid: 2dc6ddfe4af62b246882d5d206e9185d, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

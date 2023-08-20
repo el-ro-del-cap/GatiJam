@@ -58,10 +58,10 @@ MonoBehaviour:
   sprtWhite: {fileID: 21300000, guid: 150b13459382b0a49bc22fcd6d2f734c, type: 3}
   sprtBlack: {fileID: 21300000, guid: e585c1818f549734abf69f59bb9aff0d, type: 3}
   sprtOrange: {fileID: 21300000, guid: 0ca008f0236a881488900361c5bb509f, type: 3}
-  sprtWB: {fileID: 21300000, guid: 6cc794b0ef0f9fe4cbf65ecebe31176d, type: 3}
-  sprtBO: {fileID: 21300000, guid: 6cc794b0ef0f9fe4cbf65ecebe31176d, type: 3}
-  sprtOW: {fileID: 21300000, guid: 6cc794b0ef0f9fe4cbf65ecebe31176d, type: 3}
-  sprtBOW: {fileID: 21300000, guid: 6cc794b0ef0f9fe4cbf65ecebe31176d, type: 3}
+  sprtWB: {fileID: 21300000, guid: f01f2c12b65dcfb489059e382ace275d, type: 3}
+  sprtBO: {fileID: 21300000, guid: 3bffc9a9afd6783428ee7b3d6539517d, type: 3}
+  sprtOW: {fileID: 21300000, guid: 0047c8016b2ee2c41afa4b4de2c7d3dc, type: 3}
+  sprtBOW: {fileID: 21300000, guid: 72da8965dfde1c84f9122ae55544b27c, type: 3}
   foods: 
 --- !u!222 &422406429892059950
 CanvasRenderer:

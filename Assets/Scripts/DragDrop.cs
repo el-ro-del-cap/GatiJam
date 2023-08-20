@@ -121,7 +121,11 @@ public class DragDrop : MonoBehaviour
                 ChangeSprite(sprtWhite);
             }
         } else if (orange) {
-            ChangeSprite(sprtOrange);
+            if (black) {
+                ChangeSprite(sprtBO);
+            } else {
+                ChangeSprite(sprtOrange);
+            }
         } else if (black) {
             ChangeSprite(sprtBlack);
         } else {
