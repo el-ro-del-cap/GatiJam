@@ -2747,10 +2747,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 1641593248}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -330, y: -169.3204}
-  m_SizeDelta: {x: -1065, y: -456.4408}
+  m_AnchorMin: {x: 0.5, y: 0}
+  m_AnchorMax: {x: 0.5, y: 0}
+  m_AnchoredPosition: {x: -330, y: 66.179596}
+  m_SizeDelta: {x: 15, y: 14.559204}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &919225218
 MonoBehaviour:
@@ -3233,6 +3233,10 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1066199754738095131, guid: fab8dc508a715d940a168d199ee6e0a7, type: 3}
       propertyPath: catSpawnMinTimer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1066199754738095131, guid: fab8dc508a715d940a168d199ee6e0a7, type: 3}
+      propertyPath: catSpawnVariance
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1384777679529243215, guid: fab8dc508a715d940a168d199ee6e0a7, type: 3}

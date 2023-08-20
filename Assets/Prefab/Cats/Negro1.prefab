@@ -73,7 +73,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: ead52001ea74db646ab90c601fdc9fae, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 93855579cc2f46442b30f73a351a5bce, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -97,6 +97,7 @@ GameObject:
   - component: {fileID: -8053702438202027289}
   - component: {fileID: 8177132799890715085}
   - component: {fileID: 2701160775928435894}
+  - component: {fileID: 1696409751150710701}
   m_Layer: 6
   m_Name: Negro1
   m_TagString: Untagged
@@ -134,13 +135,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spriteScript: {fileID: -8053702438202027289}
   maxPatience: 100
-  patienceDelta: 5
+  patienceDelta: 10
   damage: 10
   damageCooldown: 5
   meows:
-  - {fileID: 8300000, guid: 922ee90e50d429e45b912b87c3ffb789, type: 3}
-  - {fileID: 8300000, guid: 2ba62fc4bb1caa045a439239b91c6bc6, type: 3}
-  foods: 02000000
+  - {fileID: 8300000, guid: cc39cf2a812c8fd40bec592193df1fd9, type: 3}
+  - {fileID: 8300000, guid: 98b0d601793b84a4ebc715b2eeda7ed2, type: 3}
+  - {fileID: 8300000, guid: a6cee6e5088d430428c96728e581ad86, type: 3}
+  - {fileID: 8300000, guid: 15d0767d294f0a44cb26995b66d17e83, type: 3}
+  - {fileID: 8300000, guid: 14355a9f905b939409fcf0ecd686a05a, type: 3}
+  - {fileID: 8300000, guid: dd2fc1d6fb103bb40b455f5d8b4dafaa, type: 3}
+  foods: 01000000
   moveEasing:
     serializedVersion: 2
     m_Curve:
@@ -190,20 +195,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spriteRenderer: {fileID: 8168131839012929639}
   parado:
-  - {fileID: 21300000, guid: ead52001ea74db646ab90c601fdc9fae, type: 3}
-  - {fileID: 21300000, guid: c230e7706542b1549be8311ff7f1d1c5, type: 3}
+  - {fileID: 21300000, guid: 93855579cc2f46442b30f73a351a5bce, type: 3}
+  - {fileID: 21300000, guid: 522c7b780a81d7b4886b903919aa38ad, type: 3}
   neutro:
-  - {fileID: 21300000, guid: 01954f809a4bdbc409550bf92133aecd, type: 3}
-  - {fileID: 21300000, guid: c230e7706542b1549be8311ff7f1d1c5, type: 3}
+  - {fileID: 21300000, guid: 59afe2d0e8b897e4f9fac41eeb545988, type: 3}
+  - {fileID: 21300000, guid: 522c7b780a81d7b4886b903919aa38ad, type: 3}
   feliz:
-  - {fileID: 21300000, guid: 1cb42e2a85bf00449b76d6611f68e218, type: 3}
-  - {fileID: 21300000, guid: c230e7706542b1549be8311ff7f1d1c5, type: 3}
+  - {fileID: 21300000, guid: 3b03d24afad70f34393eb67917d67e38, type: 3}
+  - {fileID: 21300000, guid: 522c7b780a81d7b4886b903919aa38ad, type: 3}
   sad:
-  - {fileID: 21300000, guid: ab163d3665d3223408ce346e6934d97c, type: 3}
-  - {fileID: 21300000, guid: 99ace4bf977351944aafccf19488648e, type: 3}
+  - {fileID: 21300000, guid: fe2a80cdfc8176142907c037d87da8b8, type: 3}
+  - {fileID: 21300000, guid: 0fac02a2224391f4699ce04a17541158, type: 3}
   angery:
-  - {fileID: 21300000, guid: 6d089ac5ba8efc944a634023f50f7e59, type: 3}
-  - {fileID: 21300000, guid: b63e5762292db8746bae1e8552240d78, type: 3}
+  - {fileID: 21300000, guid: 3dcf580833b4d2847a69e12d6059bdeb, type: 3}
+  - {fileID: 21300000, guid: 50862468a44c32542acad991b09fb40d, type: 3}
   meowTime: 0.3
 --- !u!82 &8177132799890715085
 AudioSource:
@@ -217,7 +222,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 0.5
+  m_Volume: 1
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -335,4 +340,16 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 1
+  m_Radius: 1.1
+--- !u!114 &1696409751150710701
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2513387600955443120}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3fbb180ceac88594ab9b7721aad03517, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

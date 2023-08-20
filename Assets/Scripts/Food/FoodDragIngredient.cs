@@ -40,13 +40,11 @@ public class FoodDragIngredient : MonoBehaviour {
 
 
     private void AddFood() {
-        Debug.Log("Adding food 1");
         int layerMask = 1 << 7; //Layer de gatos
 
         Ray ray = Camera.main.ScreenPointToRay(this.transform.position);
         RaycastHit2D hit = Physics2D.Raycast(transform.position, ray.direction, 50f, layerMask);
         if (hit.transform != null) {
-            Debug.Log("Adding food 2");
             DragDrop hitBowl = hit.transform.GetComponent<DragDrop>();
             if (hitBowl != null) {
                 hitBowl.AddFood(foodType);

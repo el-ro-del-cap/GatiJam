@@ -2,18 +2,26 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 public class DragDrop : MonoBehaviour
 {   
     public AudioClip SelectNoise;
     //public AudioSource audioJungle;
-    public Consume Consumer;
-    private Collider2D coll;
+    public Image image;
+
+    public Sprite sprtEmpty;
+    public Sprite sprtWhite;
+    public Sprite sprtBlack;
+    public Sprite sprtOrange;
+    public Sprite sprtWB;
+    public Sprite sprtBO;
+    public Sprite sprtOW;
+    public Sprite sprtBOW;
 
     public List<FoodType> foods;
 
     private void Start() {
-        coll = gameObject.GetComponent<BoxCollider2D>();
         //audioJungle = GameObject.Find("Main Camera").GetComponent<AudioSource>();
     }
 
@@ -82,6 +90,48 @@ public class DragDrop : MonoBehaviour
         //Codigo de cambiar el sprite de la imagen por acá
         if (!foods.Contains(toAdd)) {
             foods.Add(toAdd);
+            UpdateFoodGraphics();
         }
     }
+
+    public void EmptyFood() {
+        foods = new List<FoodType>();
+        UpdateFoodGraphics();
+    }
+
+    public void UpdateFoodGraphics() {
+        if (foods.Count < 1) {
+            ChangeSprite(sprtEmpty);
+            return;
+        }
+        bool white = foods.Contains(FoodType.white);
+        bool orange = foods.Contains(FoodType.orange);
+        bool black = foods.Contains(FoodType.black);
+
+        if (white) {
+            if (orange) {
+                if (black) {
+                    ChangeSprite(sprtBOW);
+                } else {
+                    ChangeSprite(sprtOW);
+                }
+            } else if (black) {
+                ChangeSprite(sprtWB);
+            } else {
+                ChangeSprite(sprtWhite);
+            }
+        } else if (orange) {
+            ChangeSprite(sprtOrange);
+        } else if (black) {
+            ChangeSprite(sprtBlack);
+        } else {
+            ChangeSprite(sprtEmpty);
+        }
+    }
+
+    private void ChangeSprite(Sprite newSprite) {
+        image.sprite = newSprite;
+    }
+
+
 }

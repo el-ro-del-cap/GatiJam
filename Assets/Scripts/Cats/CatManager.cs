@@ -10,8 +10,8 @@ public class CatManager : MonoBehaviour {
         }
     }
 
-    public float catSpawnMinTimer = 4f;
-    public float catSpawnVariance = 2f;
+    public float catSpawnMinTimer = 2f;
+    public float catSpawnVariance = 3f;
     private float nextCat = 0f;
 
     List<CatSpawn> catSpawns;
@@ -50,8 +50,44 @@ public class CatManager : MonoBehaviour {
     }
 
     private float GetNextCatTimer() {
-        return Time.time + catSpawnMinTimer + Random.Range(0f, catSpawnVariance);
+        if (InstantCat()) {
+            return Time.time + 0.1f;
+        } else {
+            return Time.time + catSpawnMinTimer + Random.Range(0f, catSpawnVariance);
+        }
     }
+
+    private bool InstantCat() {
+        int catCount = currentCats.Count;
+        float extraPercent = 0f;
+        switch (catCount) {
+            case 0:
+                extraPercent = 50f;
+                break;
+            case 1:
+                extraPercent = 50f;
+                break;
+            case 2:
+                extraPercent = 30f;
+                break;
+            case 3:
+                extraPercent = 20f;
+                break;
+            case 4:
+                extraPercent = 10f;
+                break;
+        }
+        if (extraPercent > 0f) {
+            if (Random.Range(0f, 100f) < extraPercent) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    //Extra cat chance
+    // 0 - 
+
 
     void UpdateDestinations() {
         emptyDestinations = new List<CatDestination>();

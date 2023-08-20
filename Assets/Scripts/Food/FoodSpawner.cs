@@ -16,7 +16,7 @@ public class FoodSpawner : MonoBehaviour
     // Update is called once per frame
     void Update() {
         if (foodBowl == null) {
-            foodBowl = GameObject.Instantiate(spawneePrefab, transform.parent); //Crea el bowl en el parent de este spawner
+            foodBowl = GameObject.Instantiate(spawneePrefab, spawnParent); //Crea el bowl en el parent de este spawner
             foodBowl.transform.position = transform.position;
         }
     }
