@@ -28,7 +28,14 @@ public class CatPrefabManager : MonoBehaviour {
 
 
     public GameObject GetRandomCat() {
+        randomStart:
         int randArray = Random.Range(0, catArrays.Length);
+        if (catArrays[randArray].rerollChance > 0f) {
+            float rerollRoll = Random.Range(0f, 100f);
+            if (rerollRoll < catArrays[randArray].rerollChance) {
+                goto randomStart;
+            }
+        }
         if (catArrays[randArray].variations.Length > 0) {
             int randCat = Random.Range(0, catArrays[randArray].variations.Length);
             return catArrays[randArray].variations[randCat];
@@ -41,5 +48,6 @@ public class CatPrefabManager : MonoBehaviour {
 [System.Serializable]
 public class CatPrefabArray {
     public string name;
+    public float rerollChance = 0f;
     public GameObject[] variations;
 }
