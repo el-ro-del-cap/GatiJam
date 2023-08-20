@@ -7,20 +7,16 @@ using System;
 
 public class Timer : MonoBehaviour
 {
-    public float gameTime;
-    public Decimal gameTimeDec;
+    private float gameTime;
     private TextMeshProUGUI tessto;
-    // Start is called before the first frame update
-    void Start()
+
+    void Awake()
     {
         tessto = gameObject.GetComponent<TextMeshProUGUI>();
     }
-
-    // Update is called once per frame
     void Update()
     {
         gameTime += 1*Time.deltaTime;
-        gameTimeDec = decimal.Truncate(Convert.ToDecimal(gameTime));
-        tessto.text = gameTimeDec.ToString();
+        tessto.text = Math.Round(gameTime, 2).ToString(); //gameTimeDec.ToString(); 
     }
 }
