@@ -73,7 +73,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 7a869a41092e87041964d371d9fbc6d9, type: 3}
+  m_Sprite: {fileID: 21300000, guid: de106c31d93442145a52948dbddb9bbd, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -99,7 +99,7 @@ GameObject:
   - component: {fileID: 2701160775928435894}
   - component: {fileID: 1696409751150710701}
   m_Layer: 6
-  m_Name: Calico1
+  m_Name: Carey1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -145,7 +145,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: eb831d481c2ff1645bb9ae9857d6d545, type: 3}
   - {fileID: 8300000, guid: b99ff2de2b445954eb5a44672dc638c6, type: 3}
   - {fileID: 8300000, guid: de13faf8c7e41364aaa205882ddcae87, type: 3}
-  foods: 010000000200000000000000
+  foods: 0100000000000000
   moveEasing:
     serializedVersion: 2
     m_Curve:
@@ -195,20 +195,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spriteRenderer: {fileID: 8168131839012929639}
   parado:
-  - {fileID: 21300000, guid: 7a869a41092e87041964d371d9fbc6d9, type: 3}
-  - {fileID: 21300000, guid: 8f552deeb90530b4b8fd022de403f276, type: 3}
+  - {fileID: 21300000, guid: de106c31d93442145a52948dbddb9bbd, type: 3}
+  - {fileID: 21300000, guid: a763a918e9b245942841bc6715d23063, type: 3}
   neutro:
-  - {fileID: 21300000, guid: e3ab4197bc049734282a6866ed2344bd, type: 3}
-  - {fileID: 21300000, guid: 8f552deeb90530b4b8fd022de403f276, type: 3}
+  - {fileID: 21300000, guid: 8bd62d9e27097b444b20da20df684710, type: 3}
+  - {fileID: 21300000, guid: a763a918e9b245942841bc6715d23063, type: 3}
   feliz:
-  - {fileID: 21300000, guid: 879df2e28c066fd4dbc76f8ba9bda7f3, type: 3}
-  - {fileID: 21300000, guid: 8f552deeb90530b4b8fd022de403f276, type: 3}
+  - {fileID: 21300000, guid: 057e6225024f50b4da87a47d5c048717, type: 3}
+  - {fileID: 21300000, guid: a763a918e9b245942841bc6715d23063, type: 3}
   sad:
-  - {fileID: 21300000, guid: d722d98b2ebdddd40ba257a02d573fa7, type: 3}
-  - {fileID: 21300000, guid: 8424cf90abb718a4fa8b834487941fd6, type: 3}
+  - {fileID: 21300000, guid: 76c85ec1d2e6d414dac476da22f39848, type: 3}
+  - {fileID: 21300000, guid: 59d11233e5690334297528df2b0db622, type: 3}
   angery:
-  - {fileID: 21300000, guid: adb57c7bc82a0bc4d913dbf31560e381, type: 3}
-  - {fileID: 21300000, guid: 396a08ad5de19e64dbf15aaa71eab2e2, type: 3}
+  - {fileID: 21300000, guid: 0a8e82c148208eb43b0b07bb9c346b11, type: 3}
+  - {fileID: 21300000, guid: 015ee55ef952f074d99253b720b5f020, type: 3}
   meowTime: 0.3
 --- !u!82 &8177132799890715085
 AudioSource:

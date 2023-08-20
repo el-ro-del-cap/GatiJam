@@ -150,7 +150,6 @@ public class Cat : MonoBehaviour {
     }
 
     public void FeedCat() {
-        Debug.Log("Cat fed");
         StartCoroutine(FeedCatCR());
         catAnims.ScaleBounceCat(new Vector3(1.2f, 0.8f, 1f), 1.5f);
     }

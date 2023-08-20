@@ -3433,7 +3433,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2568251307154827487, guid: fab8dc508a715d940a168d199ee6e0a7, type: 3}
       propertyPath: catArrays.Array.size
-      value: 5
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 2568251307154827487, guid: fab8dc508a715d940a168d199ee6e0a7, type: 3}
       propertyPath: catArrays.Array.data[2].name
@@ -3448,11 +3448,19 @@ PrefabInstance:
       value: Calico
       objectReference: {fileID: 0}
     - target: {fileID: 2568251307154827487, guid: fab8dc508a715d940a168d199ee6e0a7, type: 3}
+      propertyPath: catArrays.Array.data[5].name
+      value: Carey
+      objectReference: {fileID: 0}
+    - target: {fileID: 2568251307154827487, guid: fab8dc508a715d940a168d199ee6e0a7, type: 3}
       propertyPath: catArrays.Array.data[3].rerollChance
       value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 2568251307154827487, guid: fab8dc508a715d940a168d199ee6e0a7, type: 3}
       propertyPath: catArrays.Array.data[4].rerollChance
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 2568251307154827487, guid: fab8dc508a715d940a168d199ee6e0a7, type: 3}
+      propertyPath: catArrays.Array.data[5].rerollChance
       value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 2568251307154827487, guid: fab8dc508a715d940a168d199ee6e0a7, type: 3}
@@ -3465,6 +3473,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2568251307154827487, guid: fab8dc508a715d940a168d199ee6e0a7, type: 3}
       propertyPath: catArrays.Array.data[4].variations.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2568251307154827487, guid: fab8dc508a715d940a168d199ee6e0a7, type: 3}
+      propertyPath: catArrays.Array.data[5].variations.Array.size
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2568251307154827487, guid: fab8dc508a715d940a168d199ee6e0a7, type: 3}
@@ -3483,6 +3495,10 @@ PrefabInstance:
       propertyPath: catArrays.Array.data[4].variations.Array.data[0]
       value: 
       objectReference: {fileID: 2513387600955443120, guid: 79dd0664d810cfe40a8e77d6ef112e28, type: 3}
+    - target: {fileID: 2568251307154827487, guid: fab8dc508a715d940a168d199ee6e0a7, type: 3}
+      propertyPath: catArrays.Array.data[5].variations.Array.data[0]
+      value: 
+      objectReference: {fileID: 2513387600955443120, guid: f2dbc1423ecdba244b3731414d52b546, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
