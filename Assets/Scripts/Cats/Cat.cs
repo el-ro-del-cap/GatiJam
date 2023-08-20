@@ -116,7 +116,7 @@ public class Cat : MonoBehaviour {
     /// <param name="foodPile">Array de comida a chequear</param>
     /// <returns></returns>
     public bool FoodValid(FoodType[] foodPile) {
-        if (foodPile.Length != foods.Length) {
+        if (catState != CatState.happy && foodPile.Length != foods.Length) {
             return false;
         }
         foreach (FoodType reqFood in foods) {

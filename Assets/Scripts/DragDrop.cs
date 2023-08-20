@@ -11,7 +11,7 @@ public class DragDrop : MonoBehaviour
     private Collider2D coll;
     public Canvas canvas;
 
-    public FoodType[] foods;
+    public List<FoodType> foods;
 
     private void Start() {
         coll = gameObject.GetComponent<BoxCollider2D>();
@@ -59,15 +59,14 @@ public class DragDrop : MonoBehaviour
         if (hit.transform != null) {
             Cat hitCat = hit.transform.GetComponent<Cat>();
             if (hitCat != null) {
-                //if (hitCat.FoodValid(foods)) {
-                hitCat.FeedCat();
-                //}
+                if (hitCat.FoodValid(foods.ToArray())) {
+                    hitCat.FeedCat();
+                }
             }
         }
     }
 
     public void DragThisThing(BaseEventData data) {
-        PointerEventData pointerData = (PointerEventData)data;
         Vector2 position;
         RectTransformUtility.ScreenPointToLocalPointInRectangle(
             (RectTransform)canvas.transform,
@@ -76,5 +75,13 @@ public class DragDrop : MonoBehaviour
             out position);
 
         transform.position = canvas.transform.TransformPoint(position);
-    }    
+    }
+    
+
+    public void AddFood(FoodType toAdd) {
+        //Codigo de cambiar el sprite de la imagen por acá
+        if (!foods.Contains(toAdd)) {
+            foods.Add(toAdd);
+        }
+    }
 }
