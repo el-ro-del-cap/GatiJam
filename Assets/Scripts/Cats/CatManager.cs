@@ -11,6 +11,9 @@ public class CatManager : MonoBehaviour {
         }
     }
 
+    public float catSpawnMinTimer = 4f;
+    public float catSpawnVariance = 2f;
+    private float nextCat = 0f;
 
     List<CatSpawn> catSpawns;
     List<CatDestination> catDestinations;
@@ -33,16 +36,19 @@ public class CatManager : MonoBehaviour {
 
     // Start is called before the first frame update
     void Start() {
-        
-
-
+        nextCat = Time.time + 2f;
     }
 
     // Update is called once per frame
     void Update() {
+        if (Time.time > nextCat) {
+            nextCat = GetNextCatTimer();
+            SpawnCat();
+        }
+    }
 
-
-
+    private float GetNextCatTimer() {
+        return Time.time + catSpawnMinTimer + Random.Range(0f, catSpawnVariance);
     }
 
     void UpdateDestinations() {
@@ -91,6 +97,7 @@ public class CatManager : MonoBehaviour {
         Instance.catDestinations.Add(toAdd);
         Instance.UpdateDestinations();
     }
+
 
 
 }

@@ -17,8 +17,11 @@ public class Cat : MonoBehaviour {
     public float damage = 5f;
     private float patience = -1f;
     public float damageCooldown = 5f;
-    private float halfCooldown;
+    private float angryCooldown;
     private float currentCooldown = 0f;
+    private float screenXCenter = -20f;
+    public AudioClip[] meows;
+    private AudioSource audioSource;
     [Space]
     public FoodType[] foods;
     [Space]
@@ -28,11 +31,12 @@ public class Cat : MonoBehaviour {
 
     // Start is called before the first frame update
     void Start() {
+        audioSource = GetComponent<AudioSource>();
         DestinationReached += DestinationReachedHandler;
         UpdateCatState(CatState.noneStand);
         UpdateCatRotation();
         patience = maxPatience;
-        halfCooldown = damageCooldown * 0.5f;
+        angryCooldown = damageCooldown * 0.75f;
     }
 
 
@@ -47,7 +51,7 @@ public class Cat : MonoBehaviour {
                 }
             }
             currentCooldown = currentCooldown + Time.deltaTime;
-            if ((catState == CatState.neutral && currentCooldown > damageCooldown) || (catState == CatState.angry && currentCooldown > halfCooldown)) {
+            if ((catState == CatState.neutral && currentCooldown > damageCooldown) || (catState == CatState.angry && currentCooldown > angryCooldown)) {
                 currentCooldown = 0f;
                 DoMeow();
             }
@@ -87,7 +91,7 @@ public class Cat : MonoBehaviour {
             yield return null;
             currentDistance = Vector3.Distance(transform.position, destination);
         }
-        transform.position = destination;
+        transform.position = new Vector3(destination.x, destination.y, 1);
         RaiseDestinationReached(transform.position);
     }
 
@@ -98,8 +102,12 @@ public class Cat : MonoBehaviour {
     }
 
     private void DoMeow() {
-        Debug.Log("Meow");
+        HealthController.Instance.TakeDamage(damage);
         spriteScript.DoMeow();
+        if (audioSource != null && meows.Length != 0) {
+            int randMeow = Random.Range(0, meows.Length);
+            audioSource.PlayOneShot(meows[randMeow]);
+        }
     }
 
     /// <summary>
@@ -130,11 +138,24 @@ public class Cat : MonoBehaviour {
     }
 
     public void UpdateCatRotation() {
-        if (transform.position.x < 0) {
+        if (transform.position.x < screenXCenter) {
             spriteScript.spriteRenderer.flipX = true;
         } else {
             spriteScript.spriteRenderer.flipX = false;
         }
+    }
+
+    public void FeedCat() {
+        Debug.Log("Cat fed");
+        StartCoroutine(FeedCatCR());
+    }
+
+    public IEnumerator FeedCatCR() {
+        UpdateCatState(CatState.happy);
+        yield return new WaitForSeconds(1f);
+        // Vanish graphic hooked here
+        CatManager.RemoveCatFromList(this);
+        Destroy(gameObject);
     }
 }
 
