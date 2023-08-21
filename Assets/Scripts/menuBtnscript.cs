@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class menuBtnscript : MonoBehaviour
 {
     public Animator transition;
-    public float transitionTime = 1f;
+    public float transitionTime;
 
     public void LoadNextLevel()
     {
@@ -19,9 +19,9 @@ public class menuBtnscript : MonoBehaviour
         SceneManager.LoadScene(index);
     }
 
-    public void SceneLoad()
+    public void SceneLoad(int levelindex)
     {
-        StartCoroutine("LoadLevel", 1);
+        StartCoroutine("LoadLevel", levelindex);
     }
     public void OpenSubPanel(GameObject Panel)
     {

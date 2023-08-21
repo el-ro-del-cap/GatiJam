@@ -33,9 +33,9 @@ public class MusicManager : MonoBehaviour
 
     private void Update()
     {
-        if (healthController != null)
+        if (healthController != null && music3Source.volume < 0.5f)
         {
-            float healthVolume = 1f - (healthController.currentHealth / 100f);
+            float healthVolume = 0.25f - (healthController.currentHealth / 100f);
             music3Source.volume = Mathf.Clamp01(healthVolume);
         }
     }

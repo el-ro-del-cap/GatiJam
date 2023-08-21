@@ -5,13 +5,15 @@ using UnityEngine.UI;
 
 public class ImgCycler : MonoBehaviour
 {
-    public Sprite img1;
-    public Sprite Img2;
+    public Sprite[] imgs;
+    public int count;
     private Image pana;
     // Start is called before the first frame update
     void Start()
     {
+        count = 0;
         pana = gameObject.GetComponent<Image>();
+        Debug.Log(imgs.Length);
     }
 
     // Update is called once per frame
@@ -21,9 +23,17 @@ public class ImgCycler : MonoBehaviour
     }
     public void Cycle()
     {
-        if (pana.sprite = img1) 
-            pana.sprite = Img2;
-        else if (pana.sprite = Img2) 
-            pana.sprite = img1;
+        if (count >= imgs.Length-1)
+        {
+            count = 0;
+            pana.sprite = imgs[count];
+        }
+        else
+        {
+            count++;
+            pana.sprite = imgs[count];
+        }
+
+
     }
 }

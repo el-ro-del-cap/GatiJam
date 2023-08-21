@@ -38,8 +38,9 @@ public class HealthController : MonoBehaviour {
         Pana.SetActive(true);
         BarAnim.SetTrigger("Death");
         TextAnim.SetTrigger("Death");
-        Time.timeScale = 0;
+        //Time.timeScale = 0;
         yield return new WaitForSecondsRealtime(5f);
+        //Time.timeScale = 1;
         SceneManager.LoadScene(2);
     }
 

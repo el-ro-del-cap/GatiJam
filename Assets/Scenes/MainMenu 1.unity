@@ -2046,8 +2046,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 19066b19a62736b43bfb685e76dc8367, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  img1: {fileID: 21300000, guid: 997c4c3e550e8f34684ecf06a46b9c65, type: 3}
-  Img2: {fileID: 21300000, guid: e27cb8c7effa0df4e82c6fb7d573562b, type: 3}
+  imgs:
+  - {fileID: 21300000, guid: 997c4c3e550e8f34684ecf06a46b9c65, type: 3}
+  - {fileID: 21300000, guid: e27cb8c7effa0df4e82c6fb7d573562b, type: 3}
+  count: 0
 --- !u!1 &1292074927
 GameObject:
   m_ObjectHideFlags: 0
@@ -2092,7 +2094,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 4481cf9c53e7c0e4bb98f34394ed2b6e, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.3
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -2262,11 +2264,11 @@ MonoBehaviour:
       - m_Target: {fileID: 2052389623}
         m_TargetAssemblyTypeName: menuBtnscript, Assembly-CSharp
         m_MethodName: SceneLoad
-        m_Mode: 1
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 1
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -2414,7 +2416,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1637703485
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2965,7 +2967,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 205018d6fc3916140984d5b7d772b601, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.3
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -3372,7 +3374,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: b68fc9c07ddf01c4fb4bb2070a46a77a, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.3
   m_Pitch: 1
   Loop: 1
   Mute: 0

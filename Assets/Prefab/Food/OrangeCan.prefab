@@ -136,6 +136,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Hover: {fileID: 2800000, guid: 2e8fde508bb77ab40bfc078777e83ef6, type: 3}
   Grab: {fileID: 2800000, guid: 93cf2a3b1ed130448bba5ea5842a105a, type: 3}
-  NormalCursorHotSpot: {x: -20, y: -20}
-  GrabCursorHotSpot: {x: -20, y: -20}
+  NormalCursorHotSpot: {x: 0, y: 0}
+  GrabCursorHotSpot: {x: 0, y: 0}
   foodType: 2
