@@ -7,6 +7,7 @@ using UnityEngine.Networking;
 
 public class Cat : MonoBehaviour {
 
+    public CatCounter counter;
     public event PositionDelegate DestinationReached;
     public CatSpriteStuff spriteScript;
     private CatAnimations catAnims;
@@ -31,6 +32,7 @@ public class Cat : MonoBehaviour {
 
     // Start is called before the first frame update
     void Start() {
+        counter = FindObjectOfType<CatCounter>();
         audioSource = GetComponent<AudioSource>();
         catAnims = GetComponent<CatAnimations>();
         DestinationReached += DestinationReachedHandler;
@@ -156,6 +158,7 @@ public class Cat : MonoBehaviour {
 
     public IEnumerator FeedCatCR() {
         UpdateCatState(CatState.happy);
+        counter.counterAdd();
         yield return new WaitForSeconds(1f);
         // Vanish graphic hooked here
         CatManager.RemoveCatFromList(this);
